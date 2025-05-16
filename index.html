@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="xyro, xyro dev, xyro fund, ifung, ifungtech, Xyro">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/favicon/logo.png" type="image/x-icon">
+
+		<!-- style -->
+		<link rel="stylesheet" href="/css/style.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<style>
+			.center-img-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 10vh;
+			}
+		</style>
+		<!-- font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+		<!-- Script -->
+		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+		<title>Lord-Samuel Here</title>
+	</head>
+
+	<body class="overflow-x-hidden">
+
+		<nav class="fixed z-50 flex items-center max-w-xs px-6 py-2 -translate-x-1/2 border rounded-lg bg-opacity-80 backdrop-blur-sm left-1/2 border-slate-500 top-5 bg-dark2">
+			<div class="flex gap-6 px-6">
+				<button onclick="scrollToSection('about')" class="text-sm text-white nav-button active">About</button>
+				<button onclick="scrollToSection('project')" class="text-sm text-white nav-button">Project</button>
+				<button onclick="scrollToSection('contact')" class="text-sm text-white nav-button">Contact</button>
+			</div>
+		</nav>
+
+
+		<section class="relative px-6 pt-40 pb-10 overflow-hidden lg:pb-4 particle bg-dark1 md:px-36 2xl:px-72">
+			<div id="particle" class="absolute top-0 z-0 w-full min-h-screen -left-0"></div>
+			<!-- ... -->
+			<div class="relative z-20 header">
+				<div class="z-10 flex flex-col-reverse items-center justify-between gap-10 lg:flex-row">
+					<div data-aos="fade-right">
+						<h2 class="text-xl font-bold text-white typewriter lg:text-2xl">Hello, <span class="text-blue1" id="typewriter-text">Am Lord Samuel</span></h2>
+						<h1 class="mt-2 text-3xl font-bold lg:text-5xl text-blue2">Am A Back-End Developer</h1>
+						<button onclick="scrollToSection('about')" class="relative glow-button mt-7 bg-blue2 text-black w-28 py-2 font-bold rounded-tr-[10px] rounded-tl-[20px] rounded-bl-[10px] rounded-br-[20px] transition ease-in duration-150 hover:bg-blue1">About Me</button>
+					</div>
+					<div data-aos="fade-left">
+						<img src="/images/foto.gif" class="w-full max-w-52 lg:max-w-xs" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section Start -->
+		<section id="about" class="relative px-6 pb-10 pt-28 bg-dark2 md:pt-72 lg:pb-4 md:px-36 2xl:px-96">
+			<svg viewBox="0 0 1278 189" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-0 w-full">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M1278 0H0V1.04584C4.45843 14.3343 36.9789 88.1631 211.473 98H1041C1217.86 100.621 1266.06 164.559 1278 188.799V0Z" fill="#161B21"></path>
+			</svg>
+			<div class="flex flex-col items-center">
+				<h1 data-aos="fade-up" class="text-3xl font-bold text-white">About <span class="text-blue1">Me</span></h1>
+				<div data-aos="fade-right" class="flex mt-10 gap-x-10">
+					<p class="w-full text-white">Hello Am Lord Samuel, Am 15 Years And Am A Developer.</p>
+				</div>
+			</div>
+		</section>
+		<!-- About Section End -->
+
+		<!-- Project Section Start -->
+		<section id="project" class="relative px-6 pb-10 overflow-hidden lg:pb-4 bg-dark1 pt-28 md:pt-72 md:px-36 lg:px-72">
+			<svg viewBox="0 0 1278 189" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-0 w-full">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M1278 0H0V1.04584C4.45843 14.3343 36.9789 88.1631 211.473 98H1041C1217.86 100.621 1266.06 164.559 1278 188.799V0Z" fill="#1F252D"></path>
+			</svg>
+			<div class="flex flex-col items-center">
+				<h1 data-aos="fade-up" class="text-3xl font-bold text-white"><span class="text-blue1">My</span> Project</h1>
+				<div class="flex flex-wrap justify-center w-full gap-10 mt-10">
+					<div data-aos="zoom-in-up" class="w-full max-w-md overflow-hidden shadow-2xl project bg-dark2 lg:w-1/2 border-t-dark1 rounded-xl">
+						<img src="https://files.catbox.moe/ulfzdy.jpg" alt="" class="object-cover w-full rounded-xl h-60">
+						<div class="flex flex-col gap-2 p-3">
+							<h2 class="text-lg font-semibold text-white">Rebix - AI</h2>
+							<p class="text-sm font-semibold text-gray1">This Is The Back-End Api Of Rebix Ai</p>
+							<a href="https://rebix-ai.vercel.app/api/query?q=hii" class="glow-button relative mt-5 bg-blue2 text-black px-4 py-1 w-fit text-sm font-bold rounded-tr-[10px] rounded-tl-[20px] rounded-bl-[10px] rounded-br-[20px] transition ease-in duration-150 hover:bg-blue1">View</a>
+						</div>
+					</div>
+					<div data-aos="zoom-in-up" class="w-full max-w-md overflow-hidden shadow-2xl project bg-dark2 lg:w-1/2 border-t-dark1 rounded-xl">
+						<img src="https://files.catbox.moe/acjv53.jpg" alt="" class="object-cover w-full rounded-xl h-60">
+						<div class="flex flex-col gap-2 p-3">
+							<h2 class="text-lg font-semibold text-white">Rebix - Chatbot</h2>
+							<p class="text-sm font-semibold text-gray1">Coming Soon</p>
+							<a href="https://whatsapp.com/channel/0029Vb5ZRWh3gvWRlrZ0w41J" class="glow-button relative mt-5 bg-blue2 text-black px-4 py-1 w-fit text-sm font-bold rounded-tr-[10px] rounded-tl-[20px] rounded-bl-[10px] rounded-br-[20px] transition ease-in duration-150 hover:bg-blue1">View</a>
+						</div>
+					</div>
+					<div data-aos="zoom-in-up" class="w-full max-w-md overflow-hidden shadow-2xl project bg-dark2 lg:w-1/2 border-t-dark1 rounded-xl">
+						<img src="https://files.catbox.moe/6sfebj.jpg" alt="" class="object-cover w-full rounded-xl h-60">
+						<div class="flex flex-col gap-2 p-3">
+							<h2 class="text-lg font-semibold text-white">Rebix Rest API</h2>
+							<p class="text-sm font-semibold text-gray1">This Rest Api Was Created For Developers</p>
+							<a href="https://api-rebix.vercel.app" class="glow-button relative mt-5 bg-blue2 text-black px-4 py-1 w-fit text-sm font-bold rounded-tr-[10px] rounded-tl-[20px] rounded-bl-[10px] rounded-br-[20px] transition ease-in duration-150 hover:bg-blue1">View</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Project Section End -->
+
+		<!-- Contact Section Start -->
+		<section id="contact" class="relative px-6 pb-10 overflow-hidden bg-dark2 pt-28 md:pt-72 md:px-36 lg:px-72">
+			<svg viewBox="0 0 1278 189" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-0 w-full">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M1278 0H0V1.04584C4.45843 14.3343 36.9789 88.1631 211.473 98H1041C1217.86 100.621 1266.06 164.559 1278 188.799V0Z" fill="#161B21"></path>
+			</svg>
+			<div class="flex flex-col items-center">
+				<h1 data-aos="fade-up" class="text-3xl font-bold text-white">Contact</h1>
+				<div class="flex flex-wrap justify-center w-full gap-10 mt-10">
+					<div data-aos="zoom-in-up" class="flex w-full max-w-md gap-4 p-4 overflow-hidden border border-gray-400 shadow-2xl bg-gradient-to-br from-blue1/20 via-dark1 to-dark1 lg:w-1/2 rounded-xl">
+						<div class="flex flex-col w-5/6 gap-4">
+							<div>
+								<h1 class="text-lg font-bold text-gray-400">Github</h1>
+								<span class="text-sm font-semibold text-gray-400">Explore the source code for all my project on Github</span>
+							</div>
+							<a href="https://github.com/Lord-Samuel" class="relative px-4 py-2 text-sm font-semibold bg-gray-500 rounded-lg button text-dark1 glow-button-github w-fit">Go to Github</a>
+						</div>
+						<div class="flex items-end justify-end w-1/6 h-full">
+						</div>
+					</div>
+					<div data-aos="zoom-in-up" class="flex justify-between w-full max-w-md gap-4 p-4 overflow-hidden border border-[#F84437] shadow-2xl bg-gradient-to-br from-[#F84437]/20 via-dark1/50 to-dark1 lg:w-1/2 rounded-xl">
+						<div class="flex flex-col justify-between w-5/6 gap-4">
+							<div>
+								<h1 class="text-lg font-bold text-[#F84437]">Email</h1>
+								<input hidden="" value="lordsamueltech@gmail.com" id="email">
+								<span class="text-[#F84437] text-sm font-semibold">My Email</span>
+							</div>
+							<button onclick="copyEmail()" class="button relative px-4 py-2 font-semibold text-dark1 bg-[#F84437]/70 rounded-lg glow-button-email w-fit text-sm">Copy Email</button>
+						</div>
+						<div class="flex items-end h-full">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Contact Section End -->
+
+		<!-- Footer Section Start -->
+		<footer class="flex justify-center pt-10 pb-10 bg-dark2">
+			<p class="text-xs font-semibold">Lord-Samuel-Tech</p>
+		</footer>
+		<!-- Footer Section End -->
+		
+		<script src="/js/app.js"></script>
+		<script src="/js/particle.js"></script>
+	</body>
+</html>
