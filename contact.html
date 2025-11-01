@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Lord-Samuel</title>
+    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-color: #0f172a;
+            --secondary-color: #1e293b;
+            --primary-color: #f4f7f6;
+            --light-color: #f1f5f9;
+            --text-color: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.8);
+            --nav-height: 70px;
+        }
+
+        .contact-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--nav-height) + 2rem) 2rem 2rem;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-header h1 {
+            color: var(--light-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--light-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-header p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            color: var(--light-color);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            padding: 1rem 1.2rem;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: rgba(30, 41, 59, 0.6);
+            color: var(--light-color);
+            backdrop-filter: blur(10px);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--text-color);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), rgba(100, 255, 218, 0.8));
+            color: var(--dark-color);
+            border: none;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: rgba(71, 85, 105, 0.6);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .loading-spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--dark-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .message-status {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+            backdrop-filter: blur(10px);
+        }
+
+        .message-status.success {
+            background: rgba(6, 95, 70, 0.3);
+            color: #d1fae5;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            display: block;
+        }
+
+        .message-status.error {
+            background: rgba(127, 29, 29, 0.3);
+            color: #fecaca;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            display: block;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .back-home a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .back-home a:hover {
+            color: var(--light-color);
+            transform: translateX(-5px);
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .contact-page {
+                padding: calc(var(--nav-height) + 1rem) 1rem 1rem;
+            }
+            
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-card {
+                padding: 1.5rem;
+            }
+            
+            .contact-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            input, textarea {
+                padding: 0.875rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h2 class="logo">Lord-Samuel</h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="contact.html" class="nav-contact-btn">Contact</a></li>
+            </ul>
+            <div class="menu-icon" id="menuIcon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-page">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Get In Touch</h1>
+                <p>Let's discuss your next project or collaboration</p>
+            </div>
+            
+            <div class="contact-card">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="waNum">WhatsApp Number (Optional)</label>
+                        <input type="tel" id="waNum" name="waNum" placeholder="+233245654110">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Enter your message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <div class="loading-spinner"></div>
+                    </button>
+                    
+                    <div id="messageStatus" class="message-status"></div>
+                </form>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        class ContactForm {
+            constructor() {
+                this.form = document.getElementById('contactForm');
+                this.submitBtn = this.form.querySelector('.submit-btn');
+                this.btnText = this.form.querySelector('.btn-text');
+                this.loadingSpinner = this.form.querySelector('.loading-spinner');
+                this.messageStatus = document.getElementById('messageStatus');
+                
+                this.API_URL = 'https://rebix-mailer.vercel.app/api/feedback';
+                
+                this.init();
+            }
+            
+            init() {
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            }
+            
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this.form);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    waNum: formData.get('waNum'),
+                    message: formData.get('message')
+                };
+                
+                if (!this.validateForm(data)) {
+                    return;
+                }
+                
+                this.setLoading(true);
+                
+                try {
+                    const response = await fetch(this.API_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok && result.success) {
+                        this.showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+                        this.form.reset();
+                    } else {
+                        throw new Error(result.message || 'Failed to send message');
+                    }
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    this.showMessage(error.message || 'Something went wrong. Please try again.', 'error');
+                } finally {
+                    this.setLoading(false);
+                }
+            }
+            
+            validateForm(data) {
+                if (!data.name.trim()) {
+                    this.showMessage('Please enter your name.', 'error');
+                    return false;
+                }
+                
+                if (!data.email.trim()) {
+                    this.showMessage('Please enter your email address.', 'error');
+                    return false;
+                }
+                
+                if (!this.isValidEmail(data.email)) {
+                    this.showMessage('Please enter a valid email address.', 'error');
+                    return false;
+                }
+                
+                if (!data.message.trim()) {
+                    this.showMessage('Please enter your message.', 'error');
+                    return false;
+                }
+                
+                if (data.waNum && !this.isValidPhone(data.waNum)) {
+                    this.showMessage('Please enter a valid phone number.', 'error');
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            isValidPhone(phone) {
+                const phoneRegex = /^\+?[\d\s\-\(\)]{10,}$/;
+                return phoneRegex.test(phone);
+            }
+            
+            setLoading(loading) {
+                if (loading) {
+                    this.submitBtn.disabled = true;
+                    this.btnText.style.display = 'none';
+                    this.loadingSpinner.style.display = 'block';
+                } else {
+                    this.submitBtn.disabled = false;
+                    this.btnText.style.display = 'block';
+                    this.loadingSpinner.style.display = 'none';
+                }
+            }
+            
+            showMessage(message, type) {
+                this.messageStatus.textContent = message;
+                this.messageStatus.className = `message-status ${type}`;
+                
+                if (type === 'success') {
+                    setTimeout(() => {
+                        this.messageStatus.style.display = 'none';
+                    }, 5000);
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new ContactForm();
+            
+            const menuIcon = document.getElementById('menuIcon');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuIcon) {
+                menuIcon.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
